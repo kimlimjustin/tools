@@ -1,0 +1,28 @@
+{% extends 'notes/layout.html' %}
+{% block body %}
+<div class="container">
+	{% if not user.is_authenticated %}
+		<center><div class="not-loggedin">
+			<h1>You should logged in!</h1>
+			<a href="{% url 'register' %}" class="btn btn-dark">Register</a>
+			<a href="{% url 'login' %}" class="btn btn-dark">Login</a>
+		</div></center>
+	{% else %}
+		<h1>Your Notes:</h1>
+		<a href="{% url 'create' %}" class="btn btn-dark">Create New</a>
+		<hr>
+		{% if totalnotes == 0 %}
+			<h3>You have no notes left, Create one!</h3>
+			<a href="{% url 'create' %}" class="btn btn-dark">Create</a>
+		{% endif %}
+		{% for note in notes %}
+		<div class="col-sm-3 card">
+			<h3>{{note.title}}</h3>
+			<hr>
+			<p>Created on {{note.timestamp}}</p>
+			<a href="{% url 'note' note.pk %}" class="btn btn-dark">See this note</a>
+		</div>
+		{% endfor %}
+	{% endif %}
+</div>
+{% endblock %}

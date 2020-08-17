@@ -1,0 +1,27 @@
+{% extends 'password/layout.html' %}
+{% block body %}
+<div class="container">
+	{% if not user.is_authenticated %}
+		<center><div class="not-loggedin">
+			<h1>You should logged in!</h1>
+			<a href="{% url 'register' %}" class="btn btn-dark">Register</a>
+			<a href="{% url 'login' %}" class="btn btn-dark">Login</a>
+		</div></center>
+	{% else %}
+	<h1>Convert your password to a stronger password:</h1>
+	<form class="password-form" action="{% url 'password' %}" method="post">
+		{% csrf_token %}
+		<div class="form-group">
+			<h3>Origin Password:</h3>
+			<input type="password" name="password" class="form-control" value="{{origin}}">
+		</div>
+		{% if result %}
+			<h3>Result: {{result}}</h3>
+		{% endif %}
+		<div class="form-group">
+			<input type="submit" class="btn btn-dark form-control">
+		</div>
+	</form>
+	{% endif %}
+</div>
+{% endblock %}

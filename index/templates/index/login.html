@@ -1,0 +1,28 @@
+{% extends 'index/layout.html' %}
+
+{% block nav-item %}
+<li class="nav-item">
+	<a href="{% url 'index' %}" class="nav-link">Home Page</a>
+</li>
+<li class="nav-item">
+	<a href="{% url 'register' %}" class="nav-link">Register</a>
+</li>
+{% endblock %}
+{% block body %}
+<form class="form-box container" method="post" action="{% url 'login' %}">
+	<h1 class="form-title">Login</h1>
+	{% if message %}<h4 class="error-message">{{message}}</h4>{% endif %}<hr>
+	{% csrf_token %}
+	<div class="form-group">
+		Username:
+		<input type="text" name="username" class="form-control">
+	</div>
+	<div class="form-group">
+		Password:
+		<input type="password" name="password" class="form-control">
+	</div>
+	<div class="form-group">
+		<input type="submit" class="form-control btn btn-dark">
+	</div>
+</form>
+{% endblock %}

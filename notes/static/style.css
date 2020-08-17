@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+.form-box{
+	margin: 20px auto;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.form-title{
+	text-align: center;
+	font-family: "Permanent Marker";
+}
+
+.form-control{
+	font-family: "Poppins";
+}
+
+.error-message{
+	color: red;
+	font-family: "Waiting for the Sunrise";
+}
+
+.not-loggedin{
+	margin-top: 20px;
+}
+
+.add-note{
+	margin-top: 20px;
+}
+.card{
+	padding: 20px;
+}
+
+.tool-choices{
+	width: 90%;
+	margin: 20px;
+}
+
+.password-form{
+	margin: 20px auto;
+	padding: 10px;
+	border: 1px solid black;
+	box-shadow: 1px 3px 5px 2px;
+}
+.todo{
+	box-shadow: 10px 10px;
+	justify-content: center;
+	margin: 50px auto;
+	max-width: 700px;
+	height: 100%;
+	border: 2px solid black;
+}
+
+.todo-header{
+	text-shadow: 2px 1px;
+	padding: 20px 0px;
+	background-color: #ddd;
+	border-bottom: 1px solid black;
+}
+
+.todo-header h2{
+	text-align: center;
+}
+
+.todo-add{
+	padding: 5px 20px 5px 40px;
+	background-color: #eee;
+	border-bottom: 1px solid black;
+}
+
+.todo-add-form{
+	padding-top: 10px;
+	font-size: 14px;
+	margin-top: 30px;
+}
+
+.todo-list{
+	background-color: #f2f2f29c;
+	padding: 10px 0 10px 30px;
+}
+
+.todo-list table{
+	width: 90%;
+}
+.todo-list table, tr,th, td{
+	border: 1px solid black;
+	text-align: center;
+}

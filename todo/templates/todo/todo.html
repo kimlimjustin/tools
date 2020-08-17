@@ -1,0 +1,48 @@
+{% extends 'todo/layout.html' %}
+{% block body %}
+	<div class="container">
+		{% if not user.is_authenticated %}
+			<center><div class="not-loggedin">
+				<h1>You should logged in!</h1>
+				<a href="{% url 'register' %}" class="btn btn-dark">Register</a>
+				<a href="{% url 'login' %}" class="btn btn-dark">Login</a>
+			</div></center>
+		{% else %}
+			<div class="todo">
+				<div class="todo-header">
+					<h2>To-do list:</h2>
+				</div>
+				<div class="todo-add">
+					<form class="todo-add-form" action="{% url 'todo' %}" method="post">
+						{% csrf_token %}
+						<div class="input-group mb-3">
+							<input type="text" name="todo" class="form-control" placeholder="Add todo" required>
+							<input type="date" name="deadline" class="form-control" required>
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary" type="submit" style="margin-top: 0px;">Add</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="todo-list">
+					<table>
+						<tbody>
+							<tr>
+								<th>To-do</th>
+								<th>Deadline</th>
+								<th>Delete</th>
+							</tr>
+							{% for i in todo %}
+							<tr>
+								<td>{{i.todo}}</td>
+								<td>{{i.deadline}}</td>
+								<td><a href="{% url 'delete_todo' i.pk %}" class="btn btn-danger">Delete</a></td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

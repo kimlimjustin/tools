@@ -1,0 +1,7 @@
+{% extends 'notes/layout.html' %}
+{% block body %}
+<center><div class="not-loggedin">
+	<h1>This Page does not exist and/or not belong to you</h1>
+	<a href="{% url 'index' %}" class="btn btn-dark">Back to Home Page</a>
+</div></center>
+{% endblock %}
