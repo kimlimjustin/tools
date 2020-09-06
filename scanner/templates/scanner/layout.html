@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{% block titile %}Notes{% endblock %}</title>
+	<title>{% block title %}Tools{% endblock %}</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -34,19 +34,16 @@
 	      	<a href="{% url 'logout' %}" class="nav-link">Logout</a>
 	      </li>
 	      {% endif %}
-	      {% endblock %}
 	      <li class="nav-item">
-	      	<a href="{% url 'index' %}" class="nav-link">Home Page</a>
+	      	<a href="{% url 'notes' %}" class="nav-link">Notes</a>
 	      </li>
 	      <li class="nav-item">
-	      	<a href="{% url 'todo' %}" class="nav-link">To-do</a>
+	      	<a href="{% url 'todo' %}" class="nav-link">Todo</a>
 	      </li>
 	      <li class="nav-item">
 	      	<a href="{% url 'password' %}" class="nav-link">Password Manager</a>
 	      </li>
-	      <li class="nav-item">
-	      	<a href="{% url 'scanner' %}" class="nav-link">Scanner</a>
-	      </li>
+	      {% endblock %}
 	    </ul>
 	  </div>
 	</nav>

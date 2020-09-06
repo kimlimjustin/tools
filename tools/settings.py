@@ -26,7 +26,7 @@ SECRET_KEY = 'q4uzpz%%f=_c#yrf_8_*0=^^84*2s$-o9e9x3jog@$8632v=%&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['basictools.herokuapp.com']
+ALLOWED_HOSTS = ['basictools.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'notes',
     'todo',
     'password',
+    'scanner',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

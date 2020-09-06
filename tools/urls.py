@@ -21,5 +21,6 @@ urlpatterns = [
     path("notes/", include("notes.urls")),
     path("todo/", include("todo.urls")),
     path('', include("index.urls")),
-    path("password/", include("password.urls"))
+    path("password/", include("password.urls")),
+    path("scanner", include("scanner.urls"))
 ]
