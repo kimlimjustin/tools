@@ -1,1 +1,29 @@
 {% extends 'scanner/layout.html' %}
+{% block body %}
+<div class="container">
+	<form method="post" enctype="multipart/form-data" action="{% url 'scanner' %}" class="form-box">
+	    {% csrf_token %}
+	    <div class="form-group">
+	    	<p class="form-label">Choose Your Image or Drag file</p>
+	    	<input type="file" name="myfile" class="form-control" accept='image/*' required>
+	    </div>
+	    <div class="form-group">
+	    	<button type="submit" class="form-control btn btn-dark">Upload</button>
+	    </div>
+	</form>
+
+  	{% if uploaded_file_url %}
+  		<p>Your Image: </p>
+  		<div class="form-group">
+    		<center><img src="{{uploaded_file_url}}" style="width: 100%;"></a></center>
+    	</div>
+	  	<form method="post" action="{% url 'scan' %}">
+	  		{% csrf_token %}
+	  		<input type="hidden" name="image" value="{{uploaded_file_url}}">
+	  		<div class="form-group">
+	  			<center><input type="submit" value="Scan it!" class="btn btn-dark form-control"></center>
+	  		</div>
+	  	</form>
+  	{% endif %}
+</div>
+{% endblock %}
