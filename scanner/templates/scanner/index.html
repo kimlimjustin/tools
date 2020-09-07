@@ -19,7 +19,7 @@
     	</div>
 	  	<form method="post" action="{% url 'scan' %}">
 	  		{% csrf_token %}
-	  		<input type="hidden" name="image" value="{{uploaded_file_url}}">
+	  		<input type="hidden" name="image" value="{{location}}">
 	  		<div class="form-group">
 	  			<center><input type="submit" value="Scan it!" class="btn btn-dark form-control"></center>
 	  		</div>

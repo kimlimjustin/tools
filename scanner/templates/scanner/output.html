@@ -1,0 +1,8 @@
+{% extends 'scanner/layout.html' %}
+{% block body %}
+{% load static %}
+<div class="container">
+	<img src="{% static 'output.jpg' %}">
+	<a href="{% static 'output.jpg' %}" download="Output Image" class="btn btn-dark">Download</a>
+</div>
+{% endblock %}
